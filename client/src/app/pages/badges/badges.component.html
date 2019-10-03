@@ -1,0 +1,24 @@
+<nb-card-header>
+  <h4 class="text-center">Badges List</h4>
+</nb-card-header>
+<nb-card-body>
+  <div class="container">
+    <div class="row">
+      <dl *ngFor="let badge of (badges$ | async); let i = index" class="col-md-4 col-sm-6 col-xs-12">
+
+        <dt>#</dt>
+        <dd>{{ i+1 }}</dd>
+
+        <dt>Unique Id: </dt>
+        <dd>{{ badge.uid }}</dd>
+
+        <dt>Created: </dt>
+        <dd>{{ badge.created_at }}</dd>
+
+        <dt>User: </dt>
+        <dd><a href="javascript:void(0)">{{ badge.user.first_name }} {{ badge.user.last_name }}</a></dd>
+      </dl>
+    </div>
+  </div>
+
+</nb-card-body>
